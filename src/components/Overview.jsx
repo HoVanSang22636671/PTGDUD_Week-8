@@ -1,47 +1,84 @@
+import React, { useEffect, useState } from "react";
+import cartIcon from "../assets/Image/Button 1509.png";
+import dollarIcon from "../assets/Image/Button 1529.png"
+import userIcon from "../assets/Image/Button 1530.png"
+import overviewIcon from "../assets/Image/Squares four 1.png"
+import axios from "axios";
 function Overview() {
+    const Card = ({ title, value, percent, icon, bg }) => (
+        <div className={`flex justify-between p-4 rounded-2xl shadow ${bg}`}>
+            <div className="text-left">
+                <p className="text-sm font-semibold text-gray-700">{title}</p>
+                <h3 className="text-2xl font-bold text-gray-900">${Number(value).toLocaleString()}</h3>
+                <p className="text-sm text-green-600 mt-1">▲ {percent}% <span className="text-gray-500">period of change</span></p>
+            </div>
+            <img src={icon} alt="icon" className="w-10 h-10" />
+        </div>
+    )
+    const [data, setData] = useState({
+        turnover: 0,
+        profit: 0,
+        customer: 0,
+    });
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const [turnoverRes, profitRes, customerRes] = await Promise.all([
+                    axios.get('http://localhost:3001/turnover'),
+                    axios.get('http://localhost:3001/profit'),
+                    axios.get('http://localhost:3001/customer'),
+                ]);
+                setData({
+                    turnover: turnoverRes.data.amount,
+                    profit: profitRes.data.amount,
+                    customer: customerRes.data.total,
+                });
+            } catch (error) {
+                console.log("Dùng dữ liệu giả định.", error);
+                setData({
+                    turnover: 92405,
+                    profit: 32218,
+                    customer: 298,
+                });
+            }
+        };
+        fetchData();
+    }, []);
+
+
 
     return (
-        <main className="p-2 border border-blue-400">
-            {/* Green boxes */}
-            <div className="flex justify-between mb-4 space-x-2">
-                {[1, 2, 3].map((n) => (
-                    <div key={n} className="flex items-center justify-between bg-green-600 text-white px-4 py-2 w-full">
-                        default00
-                        <img
-                            src="https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg"
-                            alt="React"
-                            className="w-6 h-6"
-                        />
-                    </div>
-                ))}
+        <div className="p-4">
+            <div className="flex items-center gap-2 mb-4 p-3">
+                <img src={overviewIcon} alt="Overview Icon" className="w-6 h-6" />
+                <h3 className="text-xl font-bold">Overview</h3>
             </div>
 
-            {/* Table */}
-            <div className="overflow-x-auto">
-                <table className="min-w-full border border-gray-300">
-                    <thead className="bg-gray-200">
-                        <tr>
-                            {[1, 2, 3, 4, 5].map((n) => (
-                                <th key={n} className="border px-4 py-2">
-                                    Column {n}
-                                </th>
-                            ))}
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {[1, 2, 3].map((row) => (
-                            <tr key={row}>
-                                {[1, 2, 3, 4, 5].map((col) => (
-                                    <td key={col} className="border px-4 py-2 text-sm text-gray-600">
-                                        Row {row}, Col {col}
-                                    </td>
-                                ))}
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+                <Card
+                    title="Turnover"
+                    value={data.turnover}
+                    percent={5.39}
+                    icon={cartIcon}
+                    bg="bg-red-100"
+                />
+                <Card
+                    title="Profit"
+                    value={data.profit}
+                    percent={5.39}
+                    icon={dollarIcon}
+                    bg="bg-blue-100"
+                />
+                <Card
+                    title="New customer"
+                    value={data.customer}
+                    percent={6.84}
+                    icon={userIcon}
+                    bg="bg-blue-100"
+                />
             </div>
-        </main>
+        </div>
     );
 }
 
