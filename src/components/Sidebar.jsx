@@ -1,6 +1,6 @@
 function Sidebar() {
     return (
-        <aside className="row-span-2 border border-blue-400 p-2 flex flex-col justify-between items-center">
+        <div className="sidebar flex flex-col justify-between h-screen p-4">
             <div className="space-y-2 text-sm text-blue-700">
                 <p>Link 1</p>
                 <p>Link 2</p>
@@ -11,7 +11,7 @@ function Sidebar() {
                 alt="React Logo"
                 className="w-20 h-20"
             />
-        </aside>
+        </div>
     );
 }
 

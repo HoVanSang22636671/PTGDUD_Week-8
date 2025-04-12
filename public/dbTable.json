@@ -1,0 +1,184 @@
+{
+    "customers": [
+        {
+            "name": "Rickey Beatty",
+            "avatar": "/src/assets/Image/Avatar.png",
+            "company": "Schultz - D'Amore",
+            "orderValue": 210.10,
+            "orderDate": "2025-04-08",
+            "status": "New",
+            "id": "1"
+        },
+        {
+            "name": "Bobby Fay",
+            "avatar": "/src/assets/Image/Avatar (2).png",
+            "company": "Beer LLC",
+            "orderValue": 296.39,
+            "orderDate": "2025-04-09",
+            "status": "Completed",
+            "id": "2"
+        },
+        {
+            "name": "Grant Dicki",
+            "avatar": "/src/assets/Image/Avatar (1).png",
+            "company": "Crooks - Berge",
+            "orderValue": 382.29,
+            "orderDate": "2025-04-09",
+            "status": "In-progress",
+            "id": "3"
+        },
+        {
+            "name": "Merle Cartwright",
+            "avatar": "/src/assets/Image/Avatar (3).png",
+            "company": "Nienow - Kreiger",
+            "orderValue": 202.39,
+            "orderDate": "2025-04-09",
+            "status": "New",
+            "id": "4"
+        },
+        {
+            "name": "Teri Shanahan",
+            "avatar": "/src/assets/Image/Avatar (4).png",
+            "company": "Ruecker - Skiles",
+            "orderValue": 640.98,
+            "orderDate": "2025-04-08",
+            "status": "In-progress",
+            "id": "5"
+        },
+        {
+            "name": "Betty Zboncak",
+            "avatar": "/src/assets/Image/Avatar.png",
+            "company": "Smitham - Brekke",
+            "orderValue": 29.45,
+            "orderDate": "2025-04-08",
+            "status": "Completed",
+            "id": "6"
+        },
+        {
+            "name": "Mack Bednar",
+            "avatar": "/src/assets/Image/Avatar (1).png",
+            "company": "Goodwin, Halvorson and Armstrong",
+            "orderValue": 408.75,
+            "orderDate": "2025-04-09",
+            "status": "In-progress",
+            "id": "7"
+        },
+        {
+            "name": "Luther Kuvalis",
+            "avatar": "/src/assets/Image/Avatar (2).png",
+            "company": "Raynor, Hessel and Ankunding",
+            "orderValue": 77.15,
+            "orderDate": "2025-04-08",
+            "status": "New",
+            "id": "8"
+        },
+        {
+            "name": "Eva Yost",
+            "avatar": "/src/assets/Image/Avatar (3).png",
+            "company": "Yost - Stracke",
+            "orderValue": 807.79,
+            "orderDate": "2025-04-09",
+            "status": "Completed",
+            "id": "9"
+        },
+        {
+            "name": "Dominic Mohr",
+            "avatar": "/src/assets/Image/Avatar (4).png",
+            "company": "Conn and Sons",
+            "orderValue": 569.49,
+            "orderDate": "2025-04-08",
+            "status": "New",
+            "id": "10"
+        },
+        {
+            "name": "Tanner Wiza",
+            "avatar": "/src/assets/Image/Avatar.png",
+            "company": "Thiel Group",
+            "orderValue": 94.88,
+            "orderDate": "2025-04-07",
+            "status": "In-progress",
+            "id": "11"
+        },
+        {
+            "name": "Chelsey Huel",
+            "avatar": "/src/assets/Image/Avatar (1).png",
+            "company": "Harvey and Sons",
+            "orderValue": 115.29,
+            "orderDate": "2025-04-08",
+            "status": "New",
+            "id": "12"
+        },
+        {
+            "name": "Tomasz Pollich",
+            "avatar": "/src/assets/Image/Avatar (2).png",
+            "company": "Windler - Moore",
+            "orderValue": 359.99,
+            "orderDate": "2025-04-07",
+            "status": "Completed",
+            "id": "13"
+        },
+        {
+            "name": "Lucinda Romaguera",
+            "avatar": "/src/assets/Image/Avatar (3).png",
+            "company": "Upton LLC",
+            "orderValue": 220.20,
+            "orderDate": "2025-04-09",
+            "status": "In-progress",
+            "id": "14"
+        },
+        {
+            "name": "Santino Schroeder",
+            "avatar": "/src/assets/Image/Avatar (4).png",
+            "company": "Veum - Emmerich",
+            "orderValue": 73.60,
+            "orderDate": "2025-04-09",
+            "status": "New",
+            "id": "15"
+        },
+        {
+            "name": "Velma Bauch",
+            "avatar": "/src/assets/Image/Avatar.png",
+            "company": "Osinski Inc",
+            "orderValue": 189.00,
+            "orderDate": "2025-04-08",
+            "status": "Completed",
+            "id": "16"
+        },
+        {
+            "name": "Tavares Raynor",
+            "avatar": "/src/assets/Image/Avatar (1).png",
+            "company": "Stark PLC",
+            "orderValue": 499.90,
+            "orderDate": "2025-04-07",
+            "status": "In-progress",
+            "id": "17"
+        },
+        {
+            "name": "Arjun Shields",
+            "avatar": "/src/assets/Image/Avatar (2).png",
+            "company": "Fadel and Sons",
+            "orderValue": 278.67,
+            "orderDate": "2025-04-09",
+            "status": "New",
+            "id": "18"
+        },
+        {
+            "name": "Noel Turcotte",
+            "avatar": "/src/assets/Image/Avatar (3).png",
+            "company": "Bins - Kuphal",
+            "orderValue": 102.30,
+            "orderDate": "2025-04-08",
+            "status": "Completed",
+            "id": "19"
+        },
+        {
+            "name": "Audrey Marvin",
+            "avatar": "/src/assets/Image/Avatar (4).png",
+            "company": "White LLC",
+            "orderValue": 159.44,
+            "orderDate": "2025-04-08",
+            "status": "In-progress",
+            "id": "20"
+        }
+    ]
+}
