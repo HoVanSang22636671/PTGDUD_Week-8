@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import DataTable from '../components/DataTable';
+import DashboardTable from '../components/DataTable';
 
 import detailIcon from '../assets/Image/File text 1.png';
 import editIcon from '../assets/Image/Download.png';
@@ -9,8 +9,6 @@ import exportIcon from '../assets/Image/Move up.png';
 
 function Dashboard() {
     const [tableData, setTableData] = useState([]);
-    const [openModal, setOpenModal] = useState(false);
-    const [selectedCustomer, setSelectedCustomer] = useState(null);
 
     // Fetch dữ liệu từ json-server
     useEffect(() => {
@@ -24,29 +22,6 @@ function Dashboard() {
         } catch (error) {
             console.error('Lỗi khi lấy dữ liệu:', error);
         }
-    };
-
-    const handleOpenEdit = (customer) => {
-        setSelectedCustomer(customer);
-        setOpenModal(true);
-    };
-
-    const handleCloseModal = () => {
-        setOpenModal(false);
-        setSelectedCustomer(null);
-    };
-
-    const handleSave = async () => {
-        if (!selectedCustomer) return;
-
-        try {
-            await axios.put(`http://localhost:3001/customers/${selectedCustomer.id}`, selectedCustomer);
-            fetchData(); // cập nhật lại dữ liệu
-        } catch (error) {
-            console.error('Lỗi khi cập nhật khách hàng:', error);
-        }
-
-        handleCloseModal();
     };
 
     return (
@@ -70,15 +45,7 @@ function Dashboard() {
                 </div>
             </div>
 
-            <DashboardTable tableData={tableData} onEdit={handleOpenEdit} />
-
-            <EditCustomerModal
-                open={openModal}
-                onClose={handleCloseModal}
-                customer={selectedCustomer}
-                setCustomer={setSelectedCustomer}
-                onSave={handleSave}
-            />
+            <DashboardTable tableData={tableData} />
         </>
     );
 }

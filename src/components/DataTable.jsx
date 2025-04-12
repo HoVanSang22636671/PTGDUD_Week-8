@@ -3,36 +3,8 @@ import { DataGrid } from '@mui/x-data-grid';
 import editIcon from '../assets/Image/create.png';
 import avatarDefault from '../assets/Image/Avatar.png';
 
-function DataTable() {
-    const mockData = [
-        {
-            id: 1,
-            name: 'Rickey Beatty',
-            avatar: avatarDefault,
-            company: "Schultz - D'Amore",
-            orderValue: 210.10,
-            orderDate: "2025-04-08",
-            status: "New"
-        },
-        {
-            id: 2,
-            name: 'Bobby Fay',
-            avatar: avatarDefault,
-            company: "Beer LLC",
-            orderValue: 296.39,
-            orderDate: "2025-04-09",
-            status: "Completed"
-        },
-        {
-            id: 3,
-            name: 'Grant Dicki',
-            avatar: avatarDefault,
-            company: "Crooks - Berge",
-            orderValue: 382.29,
-            orderDate: "2025-04-09",
-            status: "In-progress"
-        }
-    ];
+function DataTable({ tableData, onEdit }) {
+    console.log("Dữ liệu nhận được:", tableData);
 
     const columns = [
         {
@@ -55,8 +27,10 @@ function DataTable() {
             field: 'orderValue',
             headerName: 'ORDER VALUE',
             width: 120,
-            valueFormatter: ({ value }) =>
-                typeof value === 'number' ? `$${value.toFixed(2)}` : '$0.00',
+            renderCell: (params) => {
+                const value = Number(params.value).toFixed(2);
+                return <span>${value}</span>;
+            }
         },
         { field: 'orderDate', headerName: 'ORDER DATE', width: 130 },
         {
@@ -85,17 +59,16 @@ function DataTable() {
             width: 60,
             sortable: false,
             renderCell: (params) => (
-                <button onClick={() => alert(`Edit ${params.row.name}`)}>
+                <button onClick={() => onEdit(params.row)}>
                     <img src={editIcon} alt="Edit" className="w-5 h-5" />
                 </button>
             ),
         },
     ];
-
     return (
         <div style={{ height: 500, width: '100%' }} className="bg-white rounded-xl shadow-md p-4">
             <DataGrid
-                rows={mockData}
+                rows={tableData}
                 columns={columns}
                 pageSizeOptions={[5, 10]}
                 initialState={{

@@ -2,6 +2,7 @@ import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
 import Overview from "../components/Overview";
 import DataTable from "../components/DataTable";
+import Dashboard from "../pages/Dashboard";
 
 function Admin() {
     return (
@@ -16,7 +17,7 @@ function Admin() {
                     <Overview />
                 </div>
                 <div className="content flex-1 p-4 overflow-y-auto">
-                    <DataTable />
+                    <Dashboard />
                 </div>
             </div>
         </div>

@@ -25,9 +25,9 @@ function Overview() {
         const fetchData = async () => {
             try {
                 const [turnoverRes, profitRes, customerRes] = await Promise.all([
-                    axios.get('http://localhost:3001/turnover'),
-                    axios.get('http://localhost:3001/profit'),
-                    axios.get('http://localhost:3001/customer'),
+                    axios.get('http://localhost:3002/turnover'),
+                    axios.get('http://localhost:3002/profit'),
+                    axios.get('http://localhost:3002/customer'),
                 ]);
                 setData({
                     turnover: turnoverRes.data.amount,
