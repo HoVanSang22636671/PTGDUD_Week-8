@@ -49,7 +49,7 @@ function Overview() {
 
 
     return (
-        <div className="p-4">
+        <div className="p-1">
             <div className="flex items-center gap-2 mb-4 p-3">
                 <img src={overviewIcon} alt="Overview Icon" className="w-6 h-6" />
                 <h3 className="text-xl font-bold">Overview</h3>
