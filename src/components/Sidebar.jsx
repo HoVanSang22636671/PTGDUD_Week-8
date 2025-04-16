@@ -21,7 +21,7 @@ function Sidebar() {
 
                 {/* Menu */}
                 <div className="menu space-y-2">
-                    <NavLink to="/admin" end className={({ isActive }) =>
+                    <NavLink to="/" end className={({ isActive }) =>
                         `flex items-center gap-3 px-4 py-2 rounded-lg ${isActive ? 'bg-pink-500 text-white' : 'text-gray-700 hover:bg-pink-100'}`}>
                         <img src={dashboardIcon} alt="Dashboard" className="w-5 h-5" />
                         <span>Dashboard</span>

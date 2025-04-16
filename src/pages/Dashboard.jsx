@@ -10,7 +10,6 @@ import exportIcon from '../assets/Image/Move up.png';
 function Dashboard() {
     const [tableData, setTableData] = useState([]);
 
-    // Fetch dữ liệu từ json-server
     useEffect(() => {
         fetchData();
     }, []);

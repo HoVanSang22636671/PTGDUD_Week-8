@@ -4,7 +4,6 @@ import editIcon from '../assets/Image/create.png';
 import avatarDefault from '../assets/Image/Avatar.png';
 
 function DataTable({ tableData, onEdit }) {
-    console.log("Dữ liệu nhận được:", tableData);
 
     const columns = [
         {
